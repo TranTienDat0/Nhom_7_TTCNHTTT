@@ -1,0 +1,126 @@
+﻿@{
+    Layout = null;
+
+
+}
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./access/themify-icons/themify-icons.css">
+    <title>GUI Dang nhap</title>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <div class="main">
+            <header class="header">
+                <div class="header-search">
+                    <div class="header-dropdowm-search">
+                        <ul class="header-drop-menu">
+                            <li>
+                                <a href="#">All Cake Category</a>
+                                <ul class="header-drop-submenu">
+                                    <li><a href="#">Bánh mì vẽ</a></li>
+                                    <li><a href="#">Bánh sự kiện</a></li>
+                                    <li><a href="#">Bánh mì mặn</a></li>
+                                </ul>
+                                <i class="ti-angle-double-down"></i>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                    <div class="header-input">
+                        <input id="b1" type="text" width="800px" placeholder="Search" />
+                        <i class="ti-search"></i>
+                    </div>
+                    <div class="header-cart">
+                        <i class="ti-user"><a href="DangNhap.aspx" style="text-align:center;margin-top:15px">Login</a></i>
+                        <i class="ti-share"><a href="DangKy.aspx" style="text-align:center; margin-top:15px">Register</a></i>
+                        <i class="ti-shopping-cart">
+                            <span class="quantity">9</span>
+                            <h3>Cart</h3>
+                        </i>
+                    </div>
+                </div>
+                <!-- DEMO SLIDESHHOW -->
+                <div class="section-banner">
+                    <div class="section-banner-left">
+                        <h1> Wellcome to Login/Register Bakery!</h1>
+                    </div>
+                    <div class="section-banner-right">
+                        <ul>
+                            <li><a href="#"><img src="Images/sn5.JPG"> </a></li>
+                            <li><a href="#"><img src="Images/my5.JPG"> </a></li>
+                            <li><a href="#"><img src="Images/ve4.JPG"> </a></li>
+
+                        </ul>
+                    </div>
+                </div>
+
+
+            </header>
+            <section class="container-section-login-main">
+
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+            </section>
+            <footer class="container-footer">
+                <div class="footer-support">
+                    <h3> Hỗ trợ khách hàng</h3>
+                    <ul>
+                        <li><a href="#">Hotline chăm sóc khách hàng: 1900-603</a></li>
+                        <li><a href="#">Câu hỏi thưởng gặp</a></li>
+                        <li><a href="#">Hotline chăm sóc khách hàng: 1900-6035</a></li>
+                        <li><a href="#">Hotline chăm sóc khách hàng: 1900-6035 </a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-policy">
+                    <h3> Chính sách hỗ trợ</h3>
+                    <ul>
+                        <li><a href="#">Chính sách và quy định chung3</a></li>
+                        <li><a href="#">Chính sách đổi trả</a></li>
+                        <li><a href="#">Chính sách vận chuyển</a></li>
+                        <li><a href="#">Chính sách bảo mật </a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h3> Liên hệ với chúng tôi</h3>
+                    <ul>
+                        <li><a href="#">Email: Nhom07@gmail.com</a></li>
+                        <li><a href="#">Hot line : 028323868</a></li>
+                        <li>
+                            <i class="ti-twitter"></i>
+                            <i class="ti-facebook"></i>
+                            <i class="ti-instagram"></i>
+                            <i class="ti-yahoo"></i>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-pay">
+                    <h4>Thanh toán</h4>
+                    <ul>
+                        <li><i class="ti-credit-card"><a href="#"> Thẻ </a></i></li>
+                        <li><i class="ti-money"><a href="#"> Tiền mặt </a></i></li>
+                        <li><i class="ti-server"><a href="#"> More </a></i></li>
+                    </ul>
+                </div>
+            </footer>
+            <footer class="footer-end">
+                <h3>Coppyright_by_Nhom07</h3>
+            </footer>
+        </div>
+    </form>
+</body>
+<!-- SLIDE-SHOW-DEMO_SCRIPT -->
+
+
+</html>

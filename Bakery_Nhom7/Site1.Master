@@ -1,0 +1,227 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Bakery_Nhom7.Site1" %>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./access/themify-icons/themify-icons.css">
+    <title>Demo giao diện btl nhóm 7</title>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+    <div class="main">
+        <header class="header">
+            <div class="header-search">
+                <div class="header-dropdowm-search">
+                    <ul class="header-drop-menu">
+                        <li><a href="#">All Cake Category</a>
+                            <ul class="header-drop-submenu">
+                                <li><a href="ListproductByCate.aspx?MaDanhmuc=DM04">Bánh mì vẽ</a></li>
+                                <li><a href="ListproductByCate.aspx?MaDanhmuc=DM01">Bánh sự kiện</a></li>
+                                <li><a href="ListproductByCate.aspx?MaDanhmuc=DM02">Bánh mì mặn</a></li>
+                                <li><a href="ListproductByCate.aspx?MaDanhmuc=DM03">Bánh ngọt</a></li>
+                            </ul>
+                            <i class="ti-angle-double-down"></i>
+                        </li>
+
+                    </ul>
+
+                </div>
+                <div class="header-input">
+                    <input id="b1" type="text" width="800px" placeholder="Search" />
+                    <input id="sm" type="submit" name="submit" value="Tìm kiếm" />
+                </div>
+                <div class="header-cart">
+                    <i class="ti-user"><a href="GUI_LogIn.aspx" style="text-align:center;margin-top:15px">Login</a></i>
+                    <i class="ti-share"><a href="User_DangKy.aspx" style="text-align:center; margin-top:15px">Register</a></i>
+                    <i class="ti-shopping-cart"><span class="quantity">9</span>
+                        <h3><a href ="ShoppingCart.aspx" />Cart</h3>
+                    </i>
+                </div>
+            </div>
+            <!-- DEMO SLIDESHHOW -->
+            <div class="slideshow-container">
+
+                <div class="mySlides fade">
+                    <img src="./access/img/banner6.jpg" style="width:100%">
+                    <div class="text"  style="font-family:Candara" >Chào mừng bạn đến với thế giới bánh ngọt</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="./access/img/banner3.jpg" style="width:100%">
+                    <div class="text" style="color:#ba0b16;font-family:Candara">Hãy xem và đặt hàng để thưởng thức bánh nhé!</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="./access/img/banner4.jpg" style="width:100%">
+                    <div class="text" style="color:#fff; font-family:Candara">Chúc bạn một ngày mua sắm vui vẻ !</div>
+                </div>
+            </div>
+            <br>
+
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(0)"></span>
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+            </div>
+    </div>
+    <!-- END SLIDE-SHOW  -->
+    <!-- <div class="header-banner">
+                <img src="./access/img/bander.JPG"> -->
+
+    <div class="container-header-menu">
+        <ul>
+            <li><a href="mainHome.aspx">Home</a></li>
+            
+            <li><a href="TrangChu.aspx">Introduce</a>
+            <li><a href="ListproductByCate.aspx?MaDanhmuc=DM03">Bánh ngọt</a>
+            <li><a href="ListproductByCate.aspx?MaDanhmuc=DM02">Bánh mì mặn</a>
+            <li><a href="ListproductByCate.aspx?MaDanhmuc=DM04">Bánh Vẽ</a>
+            <li><a href="ListproductByCate.aspx?MaDanhmuc=DM01">More -></a>
+        </ul>
+    </div>
+    </header>
+    <section class="container-section-main">
+        <div class="section-left">
+            <div class="section-category">
+                <h3>CATEGORY</h3>
+                        <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
+                            <ItemTemplate>
+                             <ul>
+                                 <li>
+                                    <a href='ListproductByCate.aspx?MaDanhMuc=<%# Eval("MaDanhMuc") %>'><%# Eval("TenDanhMuc") %></a>
+                                </li>
+                             </ul>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:bakeryConnectionString %>"
+                            SelectCommand="SELECT * FROM [DANHMUC_SP]">
+
+                        </asp:SqlDataSource>
+            </div>
+            <div class="section-place-sales">
+                <h3>NƠI BÁN</h3>
+                <ul>
+                    <li><a href="#">Số 78 Láng Hạ, Đống Đa,Hà nội</a></li>
+                    <li><a href="#">Số 9 Trần Thái Tông, Cầu Giấy,Hà Nội</a></li>
+                    <li><a href="#">Số 15 Kim Đồng, Hoàng Mai,Hà nội</a></li>
+                    <li><a href="#">Số 580 Trường Chinh, Đống Đa,Hà nội</a></li>
+                </ul>
+            </div>
+            <div class="section-address">
+                <h3>ĐỊA CHỈ</h3>
+                <ul>
+                    <li><a href="#">Cầu Giấy,Hà Nội</a></li>
+                    <li><a href="#">Hoàng Mai,Hà nội</a></li>
+                    <li><a href="#">Đống Đa,Hà nội</a></li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="section-sidebar">
+            <div class="section-sidebar-content">
+                Tìm thấy 30 sản phẩm phù hợp
+            </div>
+            <div class="section-sidebar-menu">
+                <ul>
+                    <li id="newest"><a href="#">Mới nhất</a></li>
+                    <li><a href="SPBanChayN.aspx">Bán chạy nhất</a></li>
+                    <li><a href="ListproductByCate.aspx?MaDanhmuc=DM03">Giảm giá</a></li>
+                    <li><a href="ListproductByCate.aspx?MaDanhmuc=DM01">Mới nhất</a></li>
+                </ul>
+            </div>
+            <div class="section-sidebar-listProduct">
+                <asp:ContentPlaceHolder ID="product" runat="server"></asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </section>
+    <footer class="container-footer">
+        <div class="footer-support">
+            <h3> Hỗ trợ khách hàng</h3>
+            <ul>
+                <li><a href="#">Hotline chăm sóc khách hàng: 1900-603</a></li>
+                <li><a href="#">Câu hỏi thưởng gặp</a></li>
+                <li><a href="#">Hotline chăm sóc khách hàng: 1900-6035</a></li>
+                <li><a href="#">Hotline chăm sóc khách hàng: 1900-6035 </a></li>
+            </ul>
+        </div>
+
+       <div class="footer-policy">
+            <h3> Chính sách hỗ trợ</h3>
+           <ul>
+                <li><a href="#">Chính sách và quy định chung3</a></li>
+                <li><a href="#">Chính sách đổi trả</a></li>
+                <li><a href="#">Chính sách vận chuyển</a></li>
+                <li><a href="#">Chính sách bảo mật </a></li>
+            </ul>
+       </div>
+
+        <div class="footer-contact">
+            <h3> Liên hệ với chúng tôi</h3>
+            <ul>
+                <li><a href="#">Email: Nhom07@gmail.com</a></li>
+                <li><a href="#">Hot line : 028323868</a></li>
+                <li>   <i class="ti-twitter"></i>
+                       <i class="ti-facebook"></i>
+                       <i class="ti-instagram"></i>
+                       <i class="ti-yahoo"></i>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-pay">
+            <h3>Thanh toán</h3>
+            <ul>
+                <li><i class="ti-credit-card"><a href="#"> Thẻ </a></i></li>
+                <li><i class="ti-money"><a href="#"> Tiền mặt </a></i></li>
+                <li><i class="ti-server"><a href="#"> More </a></i></li>
+            </ul>
+        </div>
+    </footer>
+        <footer class="footer-end">
+           <h3>@Design-by-Nhom07</h3>
+        </footer>
+    </div>
+    </form>
+</body>
+<!-- SLIDE-SHOW-DEMO_SCRIPT -->
+<script>
+    //khai báo biến slideIndex đại diện cho slide hiện tại
+    var slideIndex;
+    // KHai bào hàm hiển thị slide
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+
+        slides[slideIndex].style.display = "block";
+        dots[slideIndex].className += " active";
+        //chuyển đến slide tiếp theo
+        slideIndex++;
+        //nếu đang ở slide cuối cùng thì chuyển về slide đầu
+        if (slideIndex > slides.length - 1) {
+            slideIndex = 0
+        }
+        //tự động chuyển đổi slide sau 5s
+        setTimeout(showSlides, 5000);
+    }
+    //mặc định hiển thị slide đầu tiên 
+    showSlides(slideIndex = 0);
+
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+</script>
+
+</html>
